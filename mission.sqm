@@ -9,7 +9,8 @@ class Mission
 		"A3_Modules_F",
 		"3DEN",
 		"a3_modules_f_curator_curator",
-		"A3_Soft_F_MRAP_01"
+		"A3_Soft_F_MRAP_01",
+		"A3_Soft_F_Gamma_HEMTT"
 	};
 	addOnsAuto[]=
 	{
@@ -18,6 +19,7 @@ class Mission
 		"a3_modules_f_curator_curator",
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
+		"A3_Soft_F_Gamma_HEMTT",
 		"A3_Soft_F_MRAP_01",
 		"a3_map_altis"
 	};
@@ -149,7 +151,7 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					position[]={9152.417,227.33942,17918.232};
@@ -158,6 +160,14 @@ class Mission
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
 					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={9151.5039,225.21465,17905.016};
+					id=5;
+					side="WEST";
+					vehicle="B_Truck_01_box_F";
 					skill=0.60000002;
 				};
 			};
@@ -171,7 +181,7 @@ class Mission
 				class Item0
 				{
 					position[]={9164.3936,226.96169,17919.928};
-					id=5;
+					id=6;
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
@@ -189,7 +199,7 @@ class Mission
 				class Item0
 				{
 					position[]={9168.208,226.61053,17924.803};
-					id=6;
+					id=7;
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
@@ -207,7 +217,7 @@ class Mission
 				class Item0
 				{
 					position[]={9153.0537,227.52187,17923.002};
-					id=7;
+					id=8;
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
@@ -225,7 +235,7 @@ class Mission
 				class Item0
 				{
 					position[]={9142.5605,227.03018,17920.564};
-					id=8;
+					id=9;
 					side="WEST";
 					vehicle="B_Soldier_F";
 					player="PLAY CDG";
@@ -241,7 +251,7 @@ class Mission
 		class Item0
 		{
 			position[]={9162.7031,225.45863,17933.275};
-			id=9;
+			id=10;
 			side="EMPTY";
 			vehicle="B_MRAP_01_F";
 			leader=1;
