@@ -1,0 +1,31 @@
+#include "CW_ACIM\Dialog\UI\ACIM_ui_include.hpp"
+
+class CfgFunctions {
+    #include "EPD\EPDcfgFunctions.hpp"
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	class getdown
+	{
+		name = "get_down";
+		// filename, volume, pitch
+		sound[] = {"CW_ACIM\Sound\getdown.ogg", 1, 1};
+		titles[] = {};
+	};
+	class handcuff
+	{
+		name = "handcuff";
+		// filename, volume, pitch
+		sound[] = {"CW_ACIM\Sound\handcuff.ogg", 1, 1};
+		titles[] = {};
+	};
+	class zipper
+	{
+		name = "zipper";
+		// filename, volume, pitch
+		sound[] = {"CW_ACIM\Sound\zipper.ogg", 1, 1};
+		titles[] = {};
+	};
+};
