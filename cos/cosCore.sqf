@@ -1,13 +1,13 @@
 if (!isServer) exitWith {};
 private ["_groupCount","_localGrpCount","_grp","_rdCount","_n","_r","_tempUnit","_tempVeh"];
-_town= (_this select 0);
+_mkr= (_this select 0);
 
 // Get trigger status
-_trigID=format["trig%1", _town];
+_trigID=format["trig%1", _mkr];
 _isActive=server getvariable _trigID;
 
 // Get stored town variables
-_popVar=format["population%1", _town];
+_popVar=format["population%1", _mkr];
 _information=server getvariable _popVar;
 	_civilians=(_information select 0);
 	_vehicles=(_information select 1);
@@ -17,8 +17,8 @@ _information=server getvariable _popVar;
 
  IF (debugCOS) 
 		then {
-	COSGlobalSideChat=[_civilians,_vehicles,_parked, _town];publicvariable "COSGlobalSideChat";
-	player groupChat (format ["Town:%4 .Civilians:%1 .Vehicles:%2 .Parked:%3",_civilians,_vehicles,_parked, _town]);//for singleplayer
+	COSGlobalSideChat=[_civilians,_vehicles,_parked, _mkr];publicvariable "COSGlobalSideChat";
+	player groupChat (format ["Town:%4 .Civilians:%1 .Vehicles:%2 .Parked:%3",_civilians,_vehicles,_parked, _mkr]);//for singleplayer
 		};	
 
 _showRoads=false;				
@@ -89,7 +89,7 @@ for "_i" from 1 to _civilians do {
 				null =[_unit] execVM "cos\addScript_Unit.sqf";
 					
 					IF (debugCOS) then {
-				_txt=format["INF%1,MKR%2",_i,_town];
+				_txt=format["INF%1,MKR%2",_i,_mkr];
 				_debugMkr=createMarker [_txt,getpos _unit];
 				_debugMkr setMarkerShape "ICON";
 				_debugMkr setMarkerType "hd_dot";
@@ -154,7 +154,7 @@ null =[_veh] execVM "cos\addScript_Vehicle.sqf";
 null =[_unit] execVM "cos\addScript_Unit.sqf";
 										
 		IF (debugCOS) then {
-			_txt=format["veh%1,mkr%2",_i,_town];
+			_txt=format["veh%1,mkr%2",_i,_mkr];
 			_debugMkr=createMarker [_txt,getpos _unit];
 			_debugMkr setMarkerShape "ICON";
 			_debugMkr setMarkerType "hd_dot";
@@ -195,7 +195,7 @@ if (!(server getvariable _trigID)) exitwith {_isActive=false;};
 null =[_veh] execVM "cos\addScript_Vehicle.sqf";
 
 	IF (debugCOS) then {
-		_txt=format["Park%1,mkr%2",_i,_town];
+		_txt=format["Park%1,mkr%2",_i,_mkr];
 		_debugMkr=createMarker [_txt,getpos _veh];
 		_debugMkr setMarkerShape "ICON";
 		_debugMkr setMarkerType "hd_dot";
@@ -219,9 +219,9 @@ populating_COS=false;
 if (showTownLabel and (server getvariable _trigID)) 
 	then {
 	
-	COSTownLabel=[(_civilians+_vehicles),_town];PUBLICVARIABLE "COSTownLabel";
+	COSTownLabel=[(_civilians+_vehicles),_mkr];PUBLICVARIABLE "COSTownLabel";
 	_population=format ["Population: %1",_civilians+_vehicles];
-		0=[markerText _town,_population] spawn BIS_fnc_infoText;// FOR USE IN SINGLEPLAYER
+		0=[markerText _mkr,_population] spawn BIS_fnc_infoText;// FOR USE IN SINGLEPLAYER
 		};
 
 		
@@ -241,7 +241,7 @@ waituntil {!populating_COS};
 			{
 	_grp=_x;
 	_counter=_counter+1;
-		if (debugCOS) then { deletemarker (format["INF%1,MKR%2",_counter,_town]);};
+		if (debugCOS) then { deletemarker (format["INF%1,MKR%2",_counter,_mkr]);};
 		{ deleteVehicle _x } forEach units _grp;
 		deleteGroup _grp;  
 				}foreach _civilianArray;
@@ -254,7 +254,7 @@ waituntil {!populating_COS};
 	_unit=_x select 1;
 	_grp=_x select 2;
 	_counter=_counter+1;
-		if (debugCOS) then {deletemarker (format["veh%1,mkr%2",_counter,_town]);};
+		if (debugCOS) then {deletemarker (format["veh%1,mkr%2",_counter,_mkr]);};
 
  
 // CHECK VEHICLE IS NOT TAKEN BY PLAYER
@@ -271,7 +271,7 @@ waituntil {!populating_COS};
  _counter=0;
 		{
 	_counter=_counter+1;
-	 if (debugCOS) then {deletemarker (format["Park%1,mkr%2",_counter,_town]);};
+	 if (debugCOS) then {deletemarker (format["Park%1,mkr%2",_counter,_mkr]);};
  
   // CHECK VEHICLE IS NOT TAKEN BY PLAYER
 	if ({isPlayer _x} count (crew _x) == 0) 

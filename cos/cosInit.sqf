@@ -11,7 +11,6 @@
  Open COS/AddScript_Vehicle.sqf to apply scripts to spawned vehicles.
  To get Array of COS markers use _allMarkers=SERVER getvariable "COSmarkers";
 */
-private ["_information"];
 
 if (isnil "SERVER") then {Hint "You must ADD a object named SERVER";Player Sidechat "You must ADD a object named SERVER";}else{
 if (isServer) then {
@@ -30,7 +29,7 @@ _showMarker=false;// Show COS markers on map
 
 showTownLabel = true;// Show town information when entering COS zones
 
-debugCOS=true;// Show spawned units on the map
+debugCOS=false;// Show spawned units on the map
 
 COSpedestrians=true; //Spawn pedestrians
 COScars=true;// Spawn Cars
@@ -70,37 +69,7 @@ _slack=2;// Additional spawn points
 			};
 if (({_name==_x} count blackListTowns)>0 OR (_name == "")) then {}else{
 
-//modifications to save populations
-_townOPIP = 0;	//decalres whethere the current town operations are currently in progress
-
-//check database
-if(["population",] call iniDB_exists) then {
-	if(["population",_popVar,"townOPIP","NUMBER"] call iniDB_read == 1) then {
-		_popVar=format["population%1",_foo];
-		_information=["population",_popVar,"information","ARRAY"] call iniDB_read;
-		_civilians = _information select 0;
-		_vehicles = _information select 1;
-		_parked = _information select 2;
-		_names = _information select 3;
-		_townOPIP = 1;
-		
-		//load populations models
-		{
-			_var = format["model%1",_x];
-			SERVER setvariable [_var,["population",_popVar,_var,"STRING"] call iniDB_read];
-		} forEach _names;
-		//load reputation values
-		reputations = [];
-		{
-			_var = 
-			["reputations",] call iniDB_read;
-		} forEach allPlayers;
-	};
-};
-		
-//modifications to save populations
-
-if(_townOPIP == 0){
+			
 // Scan for houses around the town area
 	if (_sizeX < 50) then {_sizeX=300;};
 	if (_sizeY < 50) then {_sizeY=300;};
@@ -147,7 +116,6 @@ _randomisation=10;
  if (!COScars) then {_vehicles=0;};// If cars disabled spawn 0
  if (!COSparked) then {_parked=0;};// If parked cars disabled spawn 0
  
- };
  
 // Create marker over town
 	_markerID=format ["COSmkrID%1",_name];
@@ -159,7 +127,7 @@ _randomisation=10;
 		_foo setMarkerText _name;
 			cosMkrArray set [count cosMkrArray,_foo];
  if (!_showMarker) then {_foo setmarkerAlpha 0;}else{_foo setmarkerAlpha 0.5;};// Show or hide marker
-
+	
 
 // Get positions until we have enough for the population
  _roadlist = _pos nearRoads _mSize;

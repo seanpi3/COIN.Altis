@@ -25,3 +25,5 @@ If (isnil "_nearZiv") exitWith {hint (localize "STR_CW_ACIM_STRINGS_NOCIVINSUR")
 If (!isnil "_nearZiv") then {{_x enableAi "Move";_x setUnitPos "UP";}forEach _nearZiv};
 
 [player, "gestureGo"] call acim_fnc_playActionNow;
+
+[_nearZiv,_PatrolVehArray,_roadPosArray] execVM "cos\CosPatrol.sqf";
