@@ -11,7 +11,7 @@ else{
 	0 = [] execVM 'player_markers.sqf';
 	_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
 	waitUntil {!isNull(findDisplay 46)};
-	(findDisplay 46) displayAddEventHandler ["KeyDown","[] execVM onKeyDown.sqf"];
+	(findDisplay 46) displayAddEventHandler ["KeyDown","_this execVM onKeyDown.sqf"];
 };
 
 //call compile preProcessFile "\iniDB\init.sqf";
