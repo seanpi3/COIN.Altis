@@ -18,9 +18,9 @@ _soldier addUniform "U_B_Ghilliesuit";
 _soldier addPrimaryWeaponItem "acc_flashlight";
 _soldier enablegunlights "forceOn";					//set to "forceOn" to force use of lights (during day too default = AUTO)
 
-_soldier spawn refillPrimaryAmmo;
-_soldier call setMissionSkill;
+//_soldier spawn refillPrimaryAmmo;
+//_soldier call setMissionSkill;
 
-_soldier addEventHandler ["Killed", server_playerDied];
+//_soldier addEventHandler ["Killed", server_playerDied];
 
 _soldier
