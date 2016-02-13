@@ -40,7 +40,7 @@ switch(_code) do{
 			currWeap = currentWeapon player;
 			player action ["SwitchWeapon", player, player, 100];
 			player switchCamera cameraView;
-		}
+		};
 		if(!(currWeap == "")) then {
 				player selectWeapon currWeap;
 		};
