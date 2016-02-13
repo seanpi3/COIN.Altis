@@ -21,8 +21,13 @@ reviveDelay = 30;
 reviveForceRespawnDelay = 5;
 reviveBleedOutDelay = 300;
 
+
+#include "taw_vd\GUI.h"
+#include "R3F_LOG\desc_include.h"
+
 class CfgFunctions {
    #include "EPD\EPDcfgFunctions.hpp"
+   #include "taw_vd\CfgFunctions.hpp"
 };
 
 class CfgSounds

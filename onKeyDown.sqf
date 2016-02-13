@@ -1,5 +1,4 @@
-params ["_control","_code","_shift","_ctrl","_alt"];
-hint "hello?";
+_code = _this select 1;
 if (_code in (actionKeys "User10")) then {
 		if (earplugs) then {
 			0 fadeSound 1;
