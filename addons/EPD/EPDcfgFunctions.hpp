@@ -1,6 +1,6 @@
 class Dictionary {
 	class Dictionary {
-		file = "EPD\SanjosFunctions\dictionary";
+		file = "addons\EPD\SanjosFunctions\dictionary";
 		class new { description = "Returns a new empty dictionary. \nExample: _myDictionary = call Dictionary_fnc_new;"; };
 		class get { description = "Returns the value of the key or objNull if the key doesn't exist. \nExample: [_myDictionary, _myKey] call Dictionary_fnc_get;"; };
 		class set { description = "Sets the key to a new value. Overwrites the previous value if the key already existed. \nExample: [_myDictionary, _myNewKey, _myNewValue] call Dictionary_fnc_set;"; };

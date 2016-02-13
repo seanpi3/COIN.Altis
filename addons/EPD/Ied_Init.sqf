@@ -20,15 +20,15 @@ publicVariable "explosiveSuperClasses";
 projectilesToIgnore = ["SmokeShell", "FlareCore", "IRStrobeBase", "GrenadeHand_stone", "Smoke_120mm_AMOS_White", "TMR_R_DG32V_F"];
 publicVariable "projectilesToIgnore";
 
-call compile preprocessFileLineNumbers "EPD\Ied_Settings.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\ExplosionFunctions.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\CreationFunctions.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\ExplosionEffects.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\CreationAuxiliaryFunctions.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\ExplosivesHandler.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\DisarmFunctions.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\DictionaryFunctions.sqf";
-call compile preprocessFileLineNumbers "EPD\IED\TriggerFunctions.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\Ied_Settings.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\ExplosionFunctions.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\CreationFunctions.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\ExplosionEffects.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\CreationAuxiliaryFunctions.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\ExplosivesHandler.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\DisarmFunctions.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\DictionaryFunctions.sqf";
+call compile preprocessFileLineNumbers "addons\EPD\IED\TriggerFunctions.sqf";
 
 
 iedSecondaryItemsCount = count iedSecondaryItems;

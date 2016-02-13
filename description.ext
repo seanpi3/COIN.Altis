@@ -24,7 +24,7 @@ reviveBleedOutDelay = 300;
 #include "R3F_LOG\desc_include.h"
 
 class CfgFunctions {
-   #include "EPD\EPDcfgFunctions.hpp"
+   #include "addons\EPD\EPDcfgFunctions.hpp"
    #include "taw_vd\CfgFunctions.hpp"
 };
 

@@ -1,7 +1,7 @@
 disableSerialization;
 enableSaving[false,false];
 if(isDedicated) then {
-	[] spawn {call compile preprocessFileLineNumbers "EPD\Ied_Init.sqf"};
+	[] spawn {call compile preprocessFileLineNumbers "addons\EPD\Ied_Init.sqf"};
 }
 else{
 	build = false;
@@ -11,7 +11,7 @@ else{
 	call compile preprocessFileLineNumbers "plank\plank_init.sqf";
 	[player, [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]] call plank_api_fnc_forceAddFortifications;
 	0 = [] execVM 'player_markers.sqf';
-	_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
+	_igiload = execVM "addons\IgiLoad\IgiLoadInit.sqf";
 	waitUntil {!isNull(findDisplay 46)};
 };
 [] execVM "addons\TAA_Repair_script\TAA_init.sqf";
