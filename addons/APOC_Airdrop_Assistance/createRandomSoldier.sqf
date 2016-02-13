@@ -13,7 +13,7 @@
  *    rank: String - (optional, default "PRIVATE")
  */
 
-if (!isServer) exitWith {};
+//if (!isServer) exitWith {};
 
 private ["_soldierTypes", "_uniformTypes", "_vestTypes", "_weaponTypes", "_group", "_position", "_rank", "_soldier"];
 

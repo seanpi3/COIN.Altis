@@ -53,7 +53,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8964.9072,211.61716,18057.77};
+					position[]={9613.3789,157.90396,20388.27};
 					id=0;
 					side="LOGIC";
 					vehicle="Logic";
@@ -72,7 +72,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9134.4785,181.90205,18139.551};
+					position[]={9693.0391,177.83066,20393.559};
 					class args
 					{
 						items=4;
@@ -118,7 +118,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9150.8271,227.48277,17925.863};
+					position[]={9709.3877,213.87286,20179.871};
 					id=2;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -136,7 +136,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9137.2617,226.5006,17917.598};
+					position[]={9695.8223,213.29062,20171.605};
 					id=3;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -154,7 +154,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={9152.417,227.33942,17918.232};
+					position[]={9710.9775,214.0583,20172.24};
 					id=4;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -164,11 +164,12 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={9151.5039,225.21465,17905.016};
+					position[]={9710.0645,213.38112,20159.023};
 					id=5;
 					side="WEST";
 					vehicle="B_Truck_01_box_F";
 					skill=0.60000002;
+					init="this addAction [""Grab bulding supplies"",{build=true}];this addAction [""Store building supplies"",{build=false}];";
 				};
 			};
 		};
@@ -180,7 +181,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9164.3936,226.96169,17919.928};
+					position[]={9722.9541,213.04855,20173.936};
 					id=6;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -198,7 +199,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9168.208,226.61053,17924.803};
+					position[]={9726.7686,212.33038,20178.811};
 					id=7;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -216,7 +217,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9153.0537,227.52187,17923.002};
+					position[]={9711.6143,214.03189,20177.01};
 					id=8;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -234,7 +235,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9142.5605,227.03018,17920.564};
+					position[]={9701.1211,213.78415,20174.572};
 					id=9;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -250,7 +251,7 @@ class Mission
 		items=1;
 		class Item0
 		{
-			position[]={9162.7031,225.45863,17933.275};
+			position[]={9721.2637,212.62395,20187.283};
 			id=10;
 			side="EMPTY";
 			vehicle="B_MRAP_01_F";
