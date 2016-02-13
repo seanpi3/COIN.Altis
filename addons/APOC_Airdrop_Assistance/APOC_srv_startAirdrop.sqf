@@ -11,7 +11,7 @@ _selectionNumber 	= _this select 1;
 _player 			= _this select 2;
 
 diag_log format ["SERVER - Apoc's Airdrop Assistance - Player: %1, Drop Type: %2, Selection #: %3",name _player,_type,_selectionNumber];
-//hint format ["Well we've made it this far! %1, %2, %3,",_player,_type,_selectionNumber];
+hint format ["Well we've made it this far! %1, %2, %3,",_player,_type,_selectionNumber];
 _selectionArray = [];
 
 switch (_type) do {
@@ -30,8 +30,8 @@ _price 			= (_selectionArray select _selectionNumber) select 2;
 
 /////// Let's spawn us  an AI helo to carry the cargo /////////////////////////////////////////////////
 
- _heliType = "B_Heli_Transport_03_unarmed_F";
- _center = createCenter civilian;
+_heliType = "B_Heli_Transport_03_unarmed_F";
+_center = createCenter civilian;
 _grp = createGroup civilian;
 if(isNil("_grp2"))then{_grp2 = createGroup civilian;}else{_grp2 = _grp2;};
 _flyHeight = 350;
@@ -44,7 +44,7 @@ _spos=[(_dropSpot select 0) - (sin _heliDirection) * _heliStartDistance, (_dropS
 diag_log format ["AAA - Heli Spawned at %1", _spos];
 _heli = createVehicle [_heliType, _spos, [], 0, "FLY"];
 _heli allowDamage false;
-_heli setVariable ["R3F_LOG_disabled", true, true];
+//_heli setVariable ["R3F_LOG_disabled", true, true];
 //[_heli] call vehicleSetup;
 
 _crew = [_grp, _spos] call createRandomSoldierC;
@@ -79,8 +79,8 @@ _object = switch (_type) do {
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle [_selectionClass, _objectSpawnPos, [], 0, "None"];
 		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
-		//_object setVariable ["A3W_purchasedStoreObject", true];
-		//_object setVariable ["A3W_purchasedVehicle", true, true];
+		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["A3W_purchasedVehicle", true, true];
 		_object setVariable ["ownerUID", getPlayerUID _player, true];
 		//[_object, false] call vehicleSetup;
 		//if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
@@ -94,7 +94,7 @@ _object = switch (_type) do {
 	{
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
-		//_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["A3W_purchasedStoreObject", true];
 		//[_object, _selectionClass] call fn_refillbox;
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
@@ -104,14 +104,14 @@ _object = switch (_type) do {
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
 		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
-		//_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["A3W_purchasedStoreObject", true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
 	};
 	default {
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
-		//_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["A3W_purchasedStoreObject", true];
 		//[_object, "mission_USSpecial"] call fn_refillbox;
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
