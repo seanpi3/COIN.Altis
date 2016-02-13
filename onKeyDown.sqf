@@ -11,7 +11,6 @@ if (_code in (actionKeys "User10")) then {
 			titleText["Earplugs inserted.","PLAIN"];
 			earplugs = true;
 		};
-		_handled = true;
 };
 
 if (_code in (actionKeys "User11")) then {

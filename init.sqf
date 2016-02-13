@@ -1,3 +1,4 @@
+disableSerialization;
 if(isServer) then {
 	[] spawn {call compile preprocessFileLineNumbers "EPD\Ied_Init.sqf"};
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
@@ -10,8 +11,9 @@ else{
 	[player, [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]] call plank_api_fnc_forceAddFortifications;
 	0 = [] execVM 'player_markers.sqf';
 	_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
+	onKeyDown = call compile preprocessFileLineNumbers "onKeyDown.sqf";
 	waitUntil {!isNull(findDisplay 46)};
-	(findDisplay 46) displayAddEventHandler ["KeyDown","_this execVM onKeyDown.sqf"];
+	(findDisplay 46) displayAddEventHandler ["KeyDown","_this call onKeyDown"];
 };
 
 //call compile preProcessFile "\iniDB\init.sqf";
