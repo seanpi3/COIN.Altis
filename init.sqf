@@ -1,5 +1,5 @@
 disableSerialization;
-if(isServer) then {
+if(isDedicated) then {
 	[] spawn {call compile preprocessFileLineNumbers "EPD\Ied_Init.sqf"};
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
 }
