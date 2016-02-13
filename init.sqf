@@ -2,7 +2,6 @@ disableSerialization;
 enableSaving[false,false];
 if(isDedicated) then {
 	[] spawn {call compile preprocessFileLineNumbers "EPD\Ied_Init.sqf"};
-	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";	
 }
 else{
 	build = false;
@@ -19,6 +18,7 @@ else{
 SLP_init = [] execvm "addons\SLP\SLP_init.sqf";
 [] execVM "real_weather.sqf";
 execVM "R3F_LOG\init.sqf";
+[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
 //call compile preProcessFile "\iniDB\init.sqf";
 //execVM "CW_ACIM\ACIM_init.sqf";
 //this addAction ["drag","Drag&Drop\Attach_big.sqf",[this],1,true,true,"","_target typeOf "Land_HBarrier_1_F" && _this distance _target < 2"]; 

@@ -1,8 +1,6 @@
 #include "CW_ACIM\Dialog\UI\ACIM_ui_include.hpp"
 #include "plank\plank.h"
 
-
-
 enableDebugConsole = 1;
 author="Ozadu";
 OnLoadName = "COIN-NW Altis";
