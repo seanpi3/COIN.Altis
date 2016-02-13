@@ -29,7 +29,7 @@ if (_code in (actionKeys "User11")) then {
 			};
 		}
 		else{
-			titleText["You have no more redgulls.","PLAIN"];
+			titleText["You have no more adrenaline shots.","PLAIN"];
 		};
 		_handled = true;
 	};
