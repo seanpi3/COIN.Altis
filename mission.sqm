@@ -259,6 +259,16 @@ class Mission
 			skill=0.60000002;
 		};
 	};
+	class Markers
+	{
+		items=1;
+		class Item0
+		{
+			position[]={9714.3848,213.82353,20180.211};
+			name="respawn_west";
+			type="Empty";
+		};
+	};
 };
 class Intro
 {
